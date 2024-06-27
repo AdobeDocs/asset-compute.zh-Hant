@@ -8,10 +8,10 @@ feature: Asset Compute Microservices
 user-guide-title: asset compute服務指南
 user-guide-description: 本檔案涵蓋 [!DNL Asset Compute Service] 如何開發、管理、部署和疑難排解自訂程式碼等工作。
 breadcrumb-title: asset compute服務指南
-source-git-commit: 06016be9b813c28c502f5bd5df87fd42a211e7ac
+source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
-source-wordcount: '96'
-ht-degree: 16%
+source-wordcount: '86'
+ht-degree: 6%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 16%
 
 + [asset compute服務使用手冊](home.md)
 + [概觀](introduction.md)
-+ [支援的檔案格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)
++ [支援的檔案格式](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [架構](architecture.md)
 + [API參考](api.md)
 + 擴充Asset compute服務 {#extend}
@@ -30,6 +30,6 @@ ht-degree: 16%
    + [開發自訂應用程式](develop-custom-application.md)
    + [測試自訂應用程式](test-custom-application.md)
    + [部署自訂應用程式](deploy-custom-application.md)
-   + [在中整合和使用 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
+   + [在中整合和使用 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)
 + [疑難排解](troubleshooting.md)
-+ [貢獻至開放原始碼專案](contribute-to-compute-service.md)
++ [Contribute至開放原始碼專案](contribute-to-compute-service.md)

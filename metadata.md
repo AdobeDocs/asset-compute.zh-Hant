@@ -12,10 +12,10 @@ feature-set: Experience Manager Assets
 git-repo: https://github.com/AdobeDocs/asset-compute.zh-Hant
 index: y
 recommendations: noDisplay
-source-git-commit: cb87ab6081d53610acf27419fa5103b3ae1ead03
+source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 91%
+source-wordcount: '132'
+ht-degree: 84%
 
 ---
 
@@ -30,7 +30,7 @@ metadata.md 檔案包含存放庫層級中繼資料，這些中繼資料會傳�
 | solution-hub-url | 開啟支援中心頁面 |
 | solution-icon | 在解決方案標題旁顯示解決方案圖示。尚未實作 |
 | getting-started-url | 快速入門頁面的連結 |
-| tutorials-url | 教學課程影片 (Helpx 或 KT 教學課程其中之一) 的連結 |
+| tutorials-url | 教學課程影片（Helpx教學課程或知識轉移教學課程）的連結 |
 | mini-toc-levels | 決定顯示在右側欄中的標題層數量。預設值為 2 |
 | git-repo | 指定內部使用的主要存放庫位置 |
 
