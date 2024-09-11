@@ -2,9 +2,9 @@
 title: 設定 [!DNL Asset Compute Service]所需的開發環境
 description: 供 [!DNL Asset Compute Service] 開始建立和測試自訂程式碼的開發人員環境設定。
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: db38b9dc27505aa7e04cf58a646005fc2e0e8782
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '359'
 ht-degree: 1%
 
 ---
@@ -43,6 +43,10 @@ ht-degree: 1%
 1. [建立App Builder專案](https://developer.adobe.com/app-builder/docs/getting_started/first_app/)。 按一下&#x200B;**[!UICONTROL 從範本建立新專案]** > **[!UICONTROL 專案]**。 選取「App Builder」。 它會建立具有兩個工作區的新App Builder專案： `Production`和`Stage`。 視需要新增其他工作區，例如`Development`。
 
 1. 在App Builder專案中，選取工作區並訂閱Asset compute所需的服務。 按一下&#x200B;**新增至專案** > **API**&#x200B;並新增`Asset Compute`、`IO Events`和`IO Events Management`服務。 新增第一個API時，它會提示您建立私密金鑰。 將此資訊儲存在電腦上，因為您需要此金鑰才能使用開發人員工具測試您的自訂應用程式。
+
+   >[!NOTE]
+   >
+   >JWT已過時，無法下載私密金鑰。 在我們更新測試工具時，請注意，使用OAuth建立的自訂背景工作程式可以部署，但devtools無法運作。
 
 ## 下一步 {#next-step}
 

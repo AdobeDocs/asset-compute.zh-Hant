@@ -2,9 +2,9 @@
 title: 針對 [!DNL Asset Compute Service]開發
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: db38b9dc27505aa7e04cf58a646005fc2e0e8782
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1542'
 ht-degree: 0%
 
 ---
@@ -96,6 +96,10 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
    ```conf
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
    ```
+
+   >[!NOTE]
+   >
+   >JWT已過時，無法下載私密金鑰。 在我們更新測試工具時，請注意，使用OAuth建立的自訂背景工作程式可以部署，但devtools無法運作。
 
 1. 從Adobe Developer Console下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案下載時檔名為`<namespace>-<workspace>.json`。 執行下列任一項作業：
 
