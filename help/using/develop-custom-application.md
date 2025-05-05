@@ -62,7 +62,7 @@ ht-degree: 0%
 
 1. 依照其餘的提示進行，並在Visual Studio Code （或您喜愛的程式碼編輯器）中開啟新的應用程式。 它包含自訂應用程式的支架和範常式式碼。
 
-   在此處閱讀有關App Builder應用程式](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)的[主要元件。
+   在此處閱讀有關App Builder應用程式[&#128279;](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)的主要元件。
 
    範本應用程式會利用Adobe的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載及協調應用程式轉譯，因此開發人員只需要實作自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式程式碼的位置。
 

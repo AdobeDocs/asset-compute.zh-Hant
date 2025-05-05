@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 透過Adobe[!DNL aio-cli]登入問題 {#login-via-aio-cli}
 
-如果您透過Adobe [!DNL aio-cli]](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)登入[!DNL Adobe Developer Console] [時發生問題，請手動新增開發、測試和部署自訂應用程式所需的認證：
+如果您透過Adobe [!DNL aio-cli][&#128279;](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)登入[!DNL Adobe Developer Console] 時發生問題，請手動新增開發、測試和部署自訂應用程式所需的認證：
 
 1. 導覽至您在[Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)上的Adobe Developer App Builder專案和工作區，然後從右上角按下&#x200B;**[!UICONTROL 下載]**。 開啟此檔案，並將此JSON儲存至您電腦上的安全位置。
 

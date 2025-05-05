@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Asset Compute Service]可透過根據[!DNL Adobe Developer App Builder]建立自訂應用程式來擴充。 這些自訂應用程式是[!DNL Project Adobe Developer App Builder]個Headless應用程式，可執行新增自訂轉換工具或呼叫外部API以執行影像作業等工作。
 
-[!DNL Project Adobe Developer App Builder]是一個架構，可在Adobe[!DNL `I/O Runtime`]上建置和部署自訂Web應用程式。 若要建立自訂應用程式，開發人員可以利用[!DNL React Spectrum] (Adobe的UI工具組)、建立微服務、建立自訂事件以及協調API。 請參閱Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/overview)的[檔案。
+[!DNL Project Adobe Developer App Builder]是一個架構，可在Adobe[!DNL `I/O Runtime`]上建置和部署自訂Web應用程式。 若要建立自訂應用程式，開發人員可以利用[!DNL React Spectrum] (Adobe的UI工具組)、建立微服務、建立自訂事件以及協調API。 請參閱Adobe Developer App Builder[&#128279;](https://developer.adobe.com/app-builder/docs/overview)的檔案。
 
 此架構所根據的基礎包括：
 

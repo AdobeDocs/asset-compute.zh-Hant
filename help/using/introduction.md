@@ -15,7 +15,7 @@ ht-degree: 1%
 
 開發人員可外掛自訂資產應用程式（也稱為自訂工作角色），以處理自訂使用案例。 服務在Adobe[!DNL I/O Runtime]上運作。 它可透過以Node.js撰寫的[!DNL Adobe Developer App Builder]個Headless應用程式延伸。 他們可以執行自訂作業，例如呼叫外部API以執行影像作業或運用[!DNL Adobe Sensei]支援。
 
-[!DNL Adobe Developer App Builder]是一個架構，可在Adobe[!DNL I/O Runtime]上建置和部署自訂Web應用程式以擴充Adobe Experience Cloud解決方案。 若要建立自訂應用程式，開發人員可以利用[!DNL React Spectrum] (Adobe的UI工具組)、建立微服務、建立自訂事件以及協調API。 請參閱Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/overview/)的[檔案。
+[!DNL Adobe Developer App Builder]是一個架構，可在Adobe[!DNL I/O Runtime]上建置和部署自訂Web應用程式以擴充Adobe Experience Cloud解決方案。 若要建立自訂應用程式，開發人員可以利用[!DNL React Spectrum] (Adobe的UI工具組)、建立微服務、建立自訂事件以及協調API。 請參閱Adobe Developer App Builder[&#128279;](https://developer.adobe.com/app-builder/docs/overview/)的檔案。
 
 >[!NOTE]
 >
