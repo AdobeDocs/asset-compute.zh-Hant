@@ -15,7 +15,7 @@ ht-degree: 0%
 
 本檔案涵蓋[!DNL Asset Compute Service]個主題，例如如何開發、管理、部署和疑難排解您的自訂程式碼。 若要瞭解[!DNL Asset Compute Service]是什麼，請前往此[簡介](introduction.md)。 另請參閱[此服務可為您做什麼](introduction.md#possible-use-cases-benefits)。
 
-[!DNL Asset Compute Service]支援許多檔案格式的轉換，並與許多Adobe服務整合。 檢視[支援的檔案格式和整合服務](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)清單。
+[!DNL Asset Compute Service]支援許多檔案格式的轉換，並與許多Adobe服務整合。 檢視[支援的檔案格式和整合服務](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)清單。
 
 檢視 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service][&#128279;](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)中可用的資產微服務功能的概觀，以及如何在[!DNL Experience Manager]中使用微服務。
 

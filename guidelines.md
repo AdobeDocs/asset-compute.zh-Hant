@@ -31,7 +31,7 @@ ht-degree: 33%
 
 若對於改善說明檔案有任何想法，歡迎以協助撰寫的方式提出。 不過，評論、問題和提取請求僅適用於 *貢獻* 僅限。 這不是為了回答您有關如何使用產品、實作專案或解決技術問題的回答。
 
-有關使用或技術錯誤的任何問題，應透過以下方式透過正常支援流程回報： [[!DNL Experience Manager] 客戶支援入口網站](https://experienceleague.adobe.com/?support-solution=Experience+Manager#home) 或討論於 [[!DNL Experience Manager] 社群](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
+有關使用或技術錯誤的任何問題，應透過以下方式透過正常支援流程回報： [[!DNL Experience Manager] 客戶支援入口網站](https://experienceleague.adobe.com/zh-hant?support-solution=Experience+Manager#home) 或討論於 [[!DNL Experience Manager] 社群](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
 
 ***協助撰寫說明檔案不會取代Adobe客戶服務*** 且這類協助撰寫若試圖解答支援相關問題，一律會遭到拒絕。
 

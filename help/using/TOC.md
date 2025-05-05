@@ -20,7 +20,7 @@ ht-degree: 6%
 
 + [asset compute服務使用手冊](home.md)
 + [概觀](introduction.md)
-+ [支援的檔案格式](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
++ [支援的檔案格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [架構](architecture.md)
 + [API參考](api.md)
 + 擴充Asset compute服務{#extend}

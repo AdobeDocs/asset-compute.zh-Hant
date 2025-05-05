@@ -25,7 +25,7 @@ ht-degree: 1%
 
 [!DNL Asset Compute Service]支援一些常見的業務使用案例，例如基本影像處理、Adobe應用程式特定轉換，以及協調複雜業務需求的自訂應用程式建立。
 
-您可以使用[!DNL Asset Compute] Web服務來產生不同檔案型別的縮圖，以及[支援的檔案格式](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)的高品質影像轉譯。 檢視透過自訂組態支援的[使用案例](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)。
+您可以使用[!DNL Asset Compute] Web服務來產生不同檔案型別的縮圖，以及[支援的檔案格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)的高品質影像轉譯。 檢視透過自訂組態支援的[使用案例](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)。
 
 >[!NOTE]
 >
@@ -46,7 +46,7 @@ ht-degree: 1%
 >
 >* [在 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)中使用資產微服務的資產處理概觀。
 >* [Adobe Developer App Builder檔案](https://developer.adobe.com/app-builder/docs/overview)。
->* [支援的檔案格式以進行處理](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)。
+>* [支援的檔案格式以進行處理](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)。
 
 <!-- **TBD:**
 * Clarify the service can only be used within AEM as Cloud Service. The docs provided as context for custom application developers. Not to be used as a standalone service.
