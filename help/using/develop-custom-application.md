@@ -2,9 +2,9 @@
 title: 針對 [!DNL Asset Compute Service]開發
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: db38b9dc27505aa7e04cf58a646005fc2e0e8782
+source-git-commit: 94fd8c0888185f64825046b7999655e9501a71fe
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1489'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 建立自訂應用程式 {#create-custom-application}
 
-確定已在本機安裝[Adobeaio-cli](https://github.com/adobe/aio-cli)。
+確定已在本機安裝[Adobe aio-cli](https://github.com/adobe/aio-cli)。
 
 1. 若要建立自訂應用程式，[請建立App Builder專案](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli)。 若要這麼做，請在您的終端機中執行`aio app init <app-name>`。
 
@@ -62,9 +62,9 @@ ht-degree: 0%
 
 1. 依照其餘的提示進行，並在Visual Studio Code （或您喜愛的程式碼編輯器）中開啟新的應用程式。 它包含自訂應用程式的支架和範常式式碼。
 
-   在此處閱讀有關App Builder應用程式[&#128279;](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)的主要元件。
+   在此處閱讀有關App Builder應用程式[的](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)主要元件。
 
-   範本應用程式會利用Adobe的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載及協調應用程式轉譯，因此開發人員只需要實作自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式程式碼的位置。
+   範本應用程式會利用Adobe的[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載及協調應用程式轉譯，因此開發人員只需要實作自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式程式碼的位置。
 
 請參閱[自訂應用程式範例](#try-sample)，以取得自訂應用程式的範例和概念。
 
@@ -90,17 +90,17 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 #### 新增認證至ENV檔案 {#add-credentials-env-file}
 
 將開發工具的後續認證插入`.env`檔案。 檔案位於App Builder專案的根目錄：
+<!--
+1. Add the absolute path to the private key file created while adding services to your App Builder Project:
 
-1. 將絕對路徑新增至新增服務至App Builder專案時建立的私密金鑰檔案：
-
-   ```conf
-   ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
-   ```
+    ```conf
+    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
+    ```
 
    >[!NOTE]
    >
-   >JWT已過時，無法下載私密金鑰。 在我們更新測試工具時，請注意，使用OAuth建立的自訂背景工作程式可以部署，但devtools無法運作。
-
+   >JWT is deprecated and Private Key is not available for download. While we are working on updating the testing tools, note that custom workers created using OAuth can be deployed but devtools would not work.
+-->
 1. 從Adobe Developer Console下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案下載時檔名為`<namespace>-<workspace>.json`。 執行下列任一項作業：
 
    * 將檔案重新命名為`console.json`，並將其移至專案的根目錄。
@@ -131,9 +131,9 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 ## 執行應用程式 {#run-custom-application}
 
-在使用Asset compute開發人員工具執行應用程式之前，請正確設定[認證](#developer-tool-credentials)。
+在使用Asset Compute開發人員工具執行應用程式之前，請正確設定[認證](#developer-tool-credentials)。
 
-若要在開發人員工具中執行應用程式，請使用`aio app run`命令。 它會部署動作以Adobe[!DNL I/O Runtime]，並在您的本機電腦上啟動開發工具。 此工具用於在開發期間測試應用程式請求。 以下是範例轉譯請求：
+若要在開發人員工具中執行應用程式，請使用`aio app run`命令。 它將動作部署到Adobe [!DNL I/O Runtime]，並在您的本機電腦上啟動開發工具。 此工具用於在開發期間測試應用程式請求。 以下是範例轉譯請求：
 
 ```json
 "renditions": [
@@ -146,11 +146,11 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->請勿在`run`命令中使用`--local`旗標。 無法搭配[!DNL Asset Compute]自訂應用程式和Asset compute開發人員工具使用。 自訂應用程式是由[!DNL Asset Compute]服務呼叫，無法存取在開發人員本機電腦上執行的動作。
+>請勿在`--local`命令中使用`run`旗標。 無法搭配[!DNL Asset Compute]自訂應用程式和Asset Compute開發人員工具使用。 自訂應用程式是由[!DNL Asset Compute]服務呼叫，無法存取在開發人員本機電腦上執行的動作。
 
 請參閱[這裡](test-custom-application.md)如何測試和偵錯您的應用程式。 當您完成自訂應用程式的開發時，[部署您的自訂應用程式](deploy-custom-application.md)。
 
-## 嘗試Adobe提供的範例應用程式 {#try-sample}
+## 試用Adobe提供的範例應用程式 {#try-sample}
 
 以下是自訂應用程式的範例：
 
@@ -226,9 +226,9 @@ exports.main = worker(async function (source, rendition) {
 
 ## 驗證和授權支援 {#authentication-authorization-support}
 
-根據預設，Asset compute自訂應用程式會隨App Builder專案的授權和驗證檢查提供。 在`manifest.yml`中將`require-adobe-auth`註解設定為`true`來啟用。
+依預設，Asset Compute自訂應用程式會隨App Builder專案的授權和驗證檢查提供。 在`require-adobe-auth`中將`true`註解設定為`manifest.yml`來啟用。
 
-### 存取其他AdobeAPI {#access-adobe-apis}
+### 存取其他Adobe API {#access-adobe-apis}
 
 <!-- TBD: Revisit this section. Where do we document console workspace creation?
 -->
@@ -245,7 +245,7 @@ const orgId = params.auth.orgId; // Experience Cloud Organization
 
 若要處理其他外部服務的認證，請將其傳遞為動作上的預設引數。 傳輸中會自動將資料加密。 如需詳細資訊，請參閱Adobe I/O Runtime開發人員指南中的[建立動作](https://developer.adobe.com/runtime/docs/guides/using/creating_actions/)。 然後在部署期間使用環境變數設定它們。 這些引數可以在動作內的`params`物件中存取。
 
-在`manifest.yml`的`inputs`內設定預設引數：
+在`inputs`的`manifest.yml`內設定預設引數：
 
 ```yaml
 packages:
@@ -278,7 +278,7 @@ const key = params.secretKey;
 
 ## 調整應用程式大小 {#sizing-workers}
 
-應用程式在Adobe[!DNL I/O Runtime]的容器中執行，具有[限制](https://developer.adobe.com/runtime/docs/guides/using/system_settings/)，可透過`manifest.yml`設定：
+應用程式會在Adobe [!DNL I/O Runtime]的容器中執行，具有[限制](https://developer.adobe.com/runtime/docs/guides/using/system_settings/)，可透過`manifest.yml`設定：
 
 ```yaml
     actions:
@@ -290,14 +290,14 @@ const key = params.secretKey;
           concurrency: 1
 ```
 
-由於Asset compute應用程式進行了廣泛的處理，您必須調整這些限制以獲得最佳效能（夠大以處理二進位資產）和效率（不會因為未使用的容器記憶體而浪費資源）。
+由於Asset Compute應用程式進行了廣泛的處理，您必須調整這些限制以獲得最佳效能（夠大以處理二進位資產）和效率（不會由於未使用的容器記憶體而浪費資源）。
 
 執行階段中動作的預設逾時為一分鐘，但可透過設定`timeout`限制（以毫秒為單位）來增加逾時。 如果您希望處理較大的檔案，請增加此時間。 考慮下載來源、處理檔案及上傳轉譯所需的總時間。 如果動作逾時，也就是說，它不會在指定的逾時限制之前傳回啟動，執行階段會捨棄容器，不會重複使用容器。
 
-asset compute應用程式本質上往往是網路和磁碟的輸入或輸出繫結。 必須先下載來源檔案。 處理通常需要大量資源，然後才會重新上傳產生的轉譯。
+Asset Compute應用程式本質上是網路和磁碟的輸入或輸出繫結。 必須先下載來源檔案。 處理通常需要大量資源，然後才會重新上傳產生的轉譯。
 
-您可以使用`memorySize`引數指定配置給動作容器的記憶體(MB)。 目前，此引數也會定義容器取得的CPU存取許可權，而最重要的是，這是使用執行階段成本的關鍵元素（容器越大，成本越高）。 當您的處理需要更多記憶體或CPU時，請在此使用較大的值，但請小心不要浪費資源，因為容器越大，整體處理量就越低。
+您可以使用`memorySize`引數指定配置給動作容器的記憶體(MB)。 目前，此引數也會定義CPU取得容器的存取許可權，而最重要的是，此為使用執行階段成本的關鍵元素（容器越大成本越高）。 當您的處理需要更多記憶體或CPU時，請在此處使用較大的值，但請注意不要因為容器越大，整體輸送量就越低，而浪費資源。
 
-此外，也可以使用`concurrency`設定控制容器內的動作並行。 此設定是單一容器（相同動作）所取得的並行啟用數。 在此模型中，動作容器就像是Node.js伺服器，可接收多個並行要求，最多可達該限制。 執行階段中的預設`memorySize`設定為200 MB，適用於較小的App Builder動作。 對於Asset compute應用程式，由於本機處理和磁碟使用量較高，因此此預設值可能過高。 視其實施而定，某些應用程式可能無法順利與並行活動搭配運作。 Asset Compute SDK會將檔案寫入不同的唯一資料夾，藉此確保可分隔啟用專案。
+此外，也可以使用`concurrency`設定控制容器內的動作並行。 此設定是單一容器（相同動作）所取得的並行啟用數。 在此模型中，動作容器就像是Node.js伺服器，可接收多個並行要求，最多可達該限制。 執行階段中的預設`memorySize`設定為200 MB，適用於較小的App Builder動作。 對於Asset Compute應用程式，由於本機處理和磁碟使用量較高，此預設值可能過高。 視其實施而定，某些應用程式可能無法順利與並行活動搭配運作。 Asset Compute SDK會將檔案寫入不同的唯一資料夾，藉此確保可分隔啟用作業。
 
 測試應用程式以尋找`concurrency`和`memorySize`的最佳數目。 較大的容器=較高的記憶體限制可能會允許更多的並行存取，但也可能對較低的流量造成浪費。
