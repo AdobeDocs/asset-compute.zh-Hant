@@ -24,7 +24,7 @@ ht-degree: 0%
 檢視[的](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)開放原始程式庫[!DNL Asset Compute Service]清單。 此外，可用的[!DNL Adobe I/O] Runtime和OpenWhisk資源為：
 
 * [開始使用Apache OpenWhisk](https://github.com/apache/openwhisk/tree/master/docs#getting-started-with-openwhisk)。
-* [實驗室：使用 [!DNL Adobe Sensei] 函式和Adobe [！DNL I/O Runtime]](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)建置可撰寫的AI。
+* [實驗室：使用 [!DNL Adobe Sensei] 函式和Adobe [!DNL I/O Runtime]](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)建置可撰寫的AI。
 * Adobe [[!DNL I/O Runtime] 常見問題集](https://developer.adobe.com/app-builder/docs/intro_and_overview/faq#using-io-runtime)。
 
 <!-- **TBD** for post-release:
