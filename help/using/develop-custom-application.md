@@ -2,7 +2,7 @@
 title: 針對 [!DNL Asset Compute Service]開發
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: 94fd8c0888185f64825046b7999655e9501a71fe
+source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 確定已在本機安裝[Adobe aio-cli](https://github.com/adobe/aio-cli)。
 
-1. 若要建立自訂應用程式，[請建立App Builder專案](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli)。 若要這麼做，請在您的終端機中執行`aio app init <app-name>`。
+1. 若要建立自訂應用程式，[請建立App Builder專案](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#4-bootstrapping-new-app-using-the-cli)。 若要這麼做，請在您的終端機中執行`aio app init <app-name>`。
 
-   如果您尚未登入，這個命令會提示您使用Adobe ID登入[Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)。 請參閱[這裡](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)以取得有關從cli登入的詳細資訊。
+   如果您尚未登入，這個命令會提示您使用Adobe ID登入[Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)。 請參閱[這裡](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#3-signing-in-from-cli)以取得有關從cli登入的詳細資訊。
 
-   Adobe建議您先登入。 如果您發生問題，請依照指示[建立應用程式而不登入](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)。
+   Adobe建議您先登入。 如果您發生問題，請依照指示[建立應用程式而不登入](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)。
 
 1. 登入後，依照CLI中的提示操作，並選取要用於應用程式的`Organization`、`Project`和`Workspace`。 選擇您[設定您的環境](setup-environment.md)時所建立的專案和工作區。 出現提示`Which extension point(s) do you wish to implement ?`時，請確定選取`DX Asset Compute Worker`：
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 1. 依照其餘的提示進行，並在Visual Studio Code （或您喜愛的程式碼編輯器）中開啟新的應用程式。 它包含自訂應用程式的支架和範常式式碼。
 
-   在此處閱讀有關App Builder應用程式[的](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application)主要元件。
+   在此處閱讀有關App Builder應用程式[的](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#5-anatomy-of-an-app-builder-application)主要元件。
 
    範本應用程式會利用Adobe的[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載及協調應用程式轉譯，因此開發人員只需要實作自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式程式碼的位置。
 
@@ -104,7 +104,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 1. 從Adobe Developer Console下載檔案。 前往專案的根目錄，然後按一下右上角的「全部下載」。 檔案下載時檔名為`<namespace>-<workspace>.json`。 執行下列任一項作業：
 
    * 將檔案重新命名為`console.json`，並將其移至專案的根目錄。
-   * 或者，您也可以將絕對路徑新增至Adobe Developer Console整合JSON檔案。 此檔案與您專案工作區中下載的[`console.json`](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)檔案相同。
+   * 或者，您也可以將絕對路徑新增至Adobe Developer Console整合JSON檔案。 此檔案與您專案工作區中下載的[`console.json`](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#42-developer-is-not-logged-in-as-enterprise-organization-user)檔案相同。
 
      ```conf
      ASSET_COMPUTE_INTEGRATION_FILE_PATH=
@@ -243,7 +243,7 @@ const orgId = params.auth.orgId; // Experience Cloud Organization
 
 ### 傳遞協力廠商系統的認證 {#pass-credentials-for-tp}
 
-若要處理其他外部服務的認證，請將其傳遞為動作上的預設引數。 傳輸中會自動將資料加密。 如需詳細資訊，請參閱Adobe I/O Runtime開發人員指南中的[建立動作](https://developer.adobe.com/runtime/docs/guides/using/creating_actions/)。 然後在部署期間使用環境變數設定它們。 這些引數可以在動作內的`params`物件中存取。
+若要處理其他外部服務的認證，請將其傳遞為動作上的預設引數。 傳輸中會自動將資料加密。 如需詳細資訊，請參閱Adobe I/O Runtime開發人員指南中的[建立動作](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/creating-actions#)。 然後在部署期間使用環境變數設定它們。 這些引數可以在動作內的`params`物件中存取。
 
 在`inputs`的`manifest.yml`內設定預設引數：
 
@@ -278,7 +278,7 @@ const key = params.secretKey;
 
 ## 調整應用程式大小 {#sizing-workers}
 
-應用程式會在Adobe [!DNL I/O Runtime]的容器中執行，具有[限制](https://developer.adobe.com/runtime/docs/guides/using/system_settings/)，可透過`manifest.yml`設定：
+應用程式會在Adobe [!DNL I/O Runtime]的容器中執行，具有[限制](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/system-settings#)，可透過`manifest.yml`設定：
 
 ```yaml
     actions:

@@ -2,9 +2,9 @@
 title: 瞭解自訂應用程式的運作方式
 description: ' [!DNL Asset Compute Service] 自訂應用程式的內部運作，以協助瞭解其運作方式。'
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '689'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 ![自訂應用程式工作流程](assets/customworker.svg)
 
-*圖：使用Adobe[!DNL Asset Compute Service]處理資產時涉及的步驟。*
+*圖：使用Adobe [!DNL Asset Compute Service]處理資產時涉及的步驟。*
 
 ## 註冊 {#registration}
 
-使用者端必須先呼叫[`/register`](api.md#register)一次，才能在第一次對[`/process`](api.md#process-request)發出要求之前，設定並擷取分錄URL，以接收AdobeAsset compute的Adobe[!DNL I/O Events]事件。
+使用者端必須先呼叫[`/register`](api.md#register)一次，才能在第一次向[`/process`](api.md#process-request)提出要求之前，設定並擷取日誌URL，以接收Adobe Asset Compute的Adobe [!DNL I/O Events]事件。
 
 ```sh
 curl -X POST \
@@ -48,7 +48,7 @@ curl -X POST \
 
 使用者端負責使用預先簽署的URL正確格式化轉譯。 [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript程式庫可用於NodeJS應用程式，以預先簽署URL。 目前資料庫僅支援Azure Blob儲存和AWS S3容器。
 
-處理要求傳回可用於輪詢[!DNL Adobe I/O]事件的`requestId`。
+處理要求傳回可用於輪詢`requestId`事件的[!DNL Adobe I/O]。
 
 以下為範例自訂應用程式處理請求。
 
@@ -68,9 +68,9 @@ curl -X POST \
 }
 ```
 
-[!DNL Asset Compute Service]傳送自訂應用程式轉譯要求給自訂應用程式。 它會使用HTTPPOST連線提供的應用程式URL，這是來自App Builder的安全網路動作URL。 所有要求都會使用HTTPS通訊協定，以提升資料安全性。
+[!DNL Asset Compute Service]傳送自訂應用程式轉譯要求給自訂應用程式。 它會使用HTTP POST連至提供的應用程式URL，這是來自App Builder的安全網路動作URL。 所有要求都會使用HTTPS通訊協定，以提升資料安全性。
 
-自訂應用程式使用的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會處理HTTPPOST要求。 它也會處理來源下載、上傳轉譯、傳送Adobe[!DNL I/O Events]和錯誤處理。
+自訂應用程式使用的[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會處理HTTP POST要求。 它也會處理來源下載、上傳轉譯、傳送Adobe [!DNL I/O Events]以及錯誤處理。
 
 <!-- TBD: Add the application diagram. -->
 
@@ -96,7 +96,7 @@ exports.main = worker(async (source, rendition) => {
 
 ### 下載來源檔案 {#download-source}
 
-自訂應用程式只會處理本機檔案。 [Asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會處理來源檔案的下載。
+自訂應用程式只會處理本機檔案。 [Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會處理來源檔案的下載。
 
 ### 建立轉譯 {#rendition-creation}
 
@@ -106,21 +106,21 @@ SDK會呼叫每個轉譯的非同步[轉譯回呼函式](https://github.com/adob
 
 範例的過度簡化是為了說明和專注於自訂應用程式的剖析。 應用程式只會將來源檔案複製到轉譯目的地。
 
-如需有關轉譯回呼引數的詳細資訊，請參閱[Asset computeSDK API](https://github.com/adobe/asset-compute-sdk#api-details)。
+如需有關轉譯回呼引數的詳細資訊，請參閱[Asset Compute SDK API](https://github.com/adobe/asset-compute-sdk#api-details)。
 
 ### 上傳轉譯 {#upload-rendition}
 
-在建立每個轉譯並儲存在`rendition.path`提供路徑的檔案中後，[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會將每個轉譯上傳至雲端儲存空間(AWS或Azure)。 若且唯若傳入請求具有多個指向相同應用程式URL的轉譯時，自訂應用程式才會同時取得多個轉譯。 上傳至雲端儲存空間會在每個轉譯之後以及下一個轉譯的執行回呼之前完成。
+在建立每個轉譯並儲存在`rendition.path`提供路徑的檔案中後，[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會將每個轉譯上傳至雲端儲存空間(AWS或Azure)。 若且唯若傳入請求具有多個指向相同應用程式URL的轉譯時，自訂應用程式才會同時取得多個轉譯。 上傳至雲端儲存空間會在每個轉譯之後以及下一個轉譯的執行回呼之前完成。
 
 `batchWorker()`有不同的行為。 它會處理所有轉譯，並在所有轉譯均已處理完畢後上傳它們。
 
-## [!DNL Adobe I/O]個事件 {#aio-events}
+## [!DNL Adobe I/O Events] {#aio-events}
 
-SDK會針對每個轉譯傳送Adobe[!DNL I/O Events]。 視結果而定，這些事件是型別`rendition_created`或`rendition_failed`。 如需詳細資訊，請參閱[Asset compute非同步事件](api.md#asynchronous-events)。
+SDK會針對每個轉譯傳送Adobe [!DNL I/O Events]。 視結果而定，這些事件是型別`rendition_created`或`rendition_failed`。 如需詳細資訊，請參閱[Asset Compute非同步事件](api.md#asynchronous-events)。
 
-## 接收[!DNL Adobe I/O]個事件 {#receive-aio-events}
+## 接收[!DNL Adobe I/O Events] {#receive-aio-events}
 
-使用者端根據其使用邏輯輪詢Adobe[!DNL I/O Events]日誌。 初始日誌URL是`/register` API回應中提供的日誌URL。 可以使用存在於事件中的`requestId`來識別事件，並且與`/process`中傳回的相同。 每個轉譯都有個別事件，會在轉譯上傳（或失敗）後立即傳送。 當使用者端收到相符事件時，可以顯示或以其他方式處理產生的轉譯。
+使用者端根據其使用邏輯輪詢Adobe [!DNL I/O Events]日誌。 初始日誌URL是`/register` API回應中提供的日誌URL。 可以使用存在於事件中的`requestId`來識別事件，並且與`/process`中傳回的相同。 每個轉譯都有個別事件，會在轉譯上傳（或失敗）後立即傳送。 當使用者端收到相符事件時，可以顯示或以其他方式處理產生的轉譯。
 
 JavaScript程式庫[`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage)使用`waitActivation()`方法取得所有事件，讓日誌輪詢變得簡單。
 
@@ -140,7 +140,7 @@ await Promise.all(events.map(event => {
 }));
 ```
 
-如需有關如何取得日誌事件的詳細資訊，請參閱Adobe[[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling_api/)。
+如需有關如何取得日誌事件的詳細資訊，請參閱Adobe [[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling-api#)。
 
 <!-- TBD:
 * Illustration of the controls/data flow.

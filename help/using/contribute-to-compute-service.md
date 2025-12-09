@@ -1,8 +1,8 @@
 ---
-title: Contribute至 [!DNL Asset Compute Service]的開放原始碼元件
-description: Contribute至 [!DNL Asset Compute Service]的開放原始碼元件。
+title: 參與 [!DNL Asset Compute Service]的開放原始碼元件
+description: 參與 [!DNL Asset Compute Service]的開放原始碼元件。
 exl-id: 99a4b4d9-4709-4f8e-9f8c-96ba1783c4c3
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
 workflow-type: tm+mt
 source-wordcount: '173'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## 可用的資源和程式庫 {#available-resources}
 
-檢視[!DNL Asset Compute Service]的[開放原始程式庫](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)清單。 此外，可用的[!DNL Adobe I/O] Runtime和OpenWhisk資源為：
+檢視[的](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)開放原始程式庫[!DNL Asset Compute Service]清單。 此外，可用的[!DNL Adobe I/O] Runtime和OpenWhisk資源為：
 
 * [開始使用Apache OpenWhisk](https://github.com/apache/openwhisk/tree/master/docs#getting-started-with-openwhisk)。
-* [實驗室：使用 [!DNL Adobe Sensei] 函式建置可撰寫的AI並Adobe[!DNL I/O Runtime]](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)。
-* Adobe[[!DNL I/O Runtime] 常見問題集](https://developer.adobe.com/runtime/docs/support/faq/)
+* [實驗室：使用 [!DNL Adobe Sensei] 函式和Adobe [！DNL I/O Runtime]](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)建置可撰寫的AI。
+* Adobe [[!DNL I/O Runtime] 常見問題集](https://developer.adobe.com/app-builder/docs/intro_and_overview/faq#using-io-runtime)。
 
 <!-- **TBD** for post-release:
 * Link to Adobe Developer App Builder open-source components.

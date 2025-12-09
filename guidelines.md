@@ -1,23 +1,23 @@
 ---
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
-source-wordcount: '588'
-ht-degree: 33%
+source-wordcount: '587'
+ht-degree: 30%
 
 ---
-# 說明檔案的Contribute指引
+# 協助撰寫說明檔案的准則
 
-## 說明文件理念
+## 說明檔案理念
 
-使用者在競爭激烈的環境中工作，致力於創造從其他競爭者中脫穎而出的數位體驗。 因此，Adobe提供進階的新工具時，必須搭配精確且清楚的說明檔案。 可讓客戶立即使用投資並大幅提高ROI的檔案。
+使用者在競爭激烈的環境中工作，致力於創造從其他競爭者中脫穎而出的數位體驗。 因此，Adobe提供進階新工具時，必須搭配精確且清楚的檔案，以執行這些工具。 可讓客戶立即使用投資並大幅提高ROI的檔案。
 
 目標是讓使用者能儘快取得說明檔案。 因此，Adobe 會優先處理精確且可使用的說明文件，並努力持續更新和改進。
 
-## 說明文件協助撰寫
+## 協助撰寫說明檔案
 
 為了持續改善說明檔案，歡迎使用者的整個社群都能協助撰寫此說明檔案。 改善說明文件可包括更正、說明、擴充和加入其他範例，無論是透過提取請求還是問題進行皆然。
 
-## 說明文件標準
+## 檔案標準
 
 以任何提取請求或問題的形式協助撰寫說明檔案，都應符合Adobe的協助撰寫和說明檔案標準。
 
@@ -29,19 +29,19 @@ ht-degree: 33%
 
 ### 協助撰寫說明檔案的目的並非解答客戶疑問
 
-若對於改善說明檔案有任何想法，歡迎以協助撰寫的方式提出。 不過，評論、問題和提取請求僅適用於 *貢獻* 僅限。 這不是為了回答您有關如何使用產品、實作專案或解決技術問題的回答。
+若對於改善說明檔案有任何想法，歡迎以協助撰寫的方式提出。 但是，評論、問題和提取要求僅適用於&#x200B;*貢獻*。 這不是為了回答您有關如何使用產品、實作專案或解決技術問題的回答。
 
-有關使用或技術錯誤的任何問題，應透過以下方式透過正常支援流程回報： [[!DNL Experience Manager] 客戶支援入口網站](https://experienceleague.adobe.com/zh-hant?support-solution=Experience+Manager#home) 或討論於 [[!DNL Experience Manager] 社群](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
+有關使用或技術錯誤的任何問題，應透過[[!DNL Experience Manager] 客戶支援入口網站](https://experienceleague.adobe.com/?support-solution=Experience+Manager#home)或[[!DNL Experience Manager] 社群](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community)的正常支援流程回報。
 
-***協助撰寫說明檔案不會取代Adobe客戶服務*** 且這類協助撰寫若試圖解答支援相關問題，一律會遭到拒絕。
+***說明檔案協助撰寫並非Adobe客戶服務的替代品***，且這類協助撰寫若試圖解答支援相關問題，一律會遭到拒絕。
 
-### 協助撰寫內容必須清楚參考受影響的說明文件頁面。
+### 協助撰寫內容必須清楚參考受影響的說明檔案頁面
 
 如果您要建立問題以建議改善說明文件，則必須附上受影響頁面的連結。如果您使用說明文件頁面上的「 **編輯此頁面** 」連結來建立問題，則系統會自動建立問題並包含該頁面的連結。
 
 此程式不適用於提取請求，因為提取請求本身就會參考受影響的頁面。
 
-## 說明文件準則
+## 說明檔案准則
 
 Adobe 會要求協助撰寫其說明文件須遵守特定風格準則。
 
@@ -59,7 +59,7 @@ Adobe 會要求協助撰寫其說明文件須遵守特定風格準則。
 
 #### 遵循Microsoft風格手冊
 
-[Microsoft風格手冊](https://learn.microsoft.com/en-us/style-guide/welcome/) 是免費提供的說明檔案風格指南，著重於軟體說明檔案。
+[Microsoft風格手冊](https://learn.microsoft.com/en-us/style-guide/welcome/)是免費提供的說明檔案風格指南，著重於軟體說明檔案。
 
 ### 正在格式化
 

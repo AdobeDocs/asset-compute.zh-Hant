@@ -2,7 +2,7 @@
 title: 測試並偵錯 [!DNL Asset Compute Service] 自訂應用程式
 description: 測試並偵錯 [!DNL Asset Compute Service] 自訂應用程式。
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 0%
@@ -25,13 +25,13 @@ To run tests for a custom application, run `aio asset-compute test-worker` comma
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-此命令會執行自訂單元測試架構，以便在專案中Asset compute應用程式動作，如下所述。 它是透過`package.json`檔案中的組態連結。 也可以進行JavaScript單元測試，例如Jest。 `aio app test`會同時執行。
+此命令會按照以下說明，執行專案中Asset Compute應用程式動作的自訂單元測試架構。 它是透過`package.json`檔案中的組態連結。 也可以進行JavaScript單元測試，例如Jest。 `aio app test`會同時執行。
 
 [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency)外掛程式內嵌為自訂應用程式應用程式中的開發相依性，因此不需要安裝在組建/測試系統上。
 
 ### 應用程式單元測試架構 {#unit-test-framework}
 
-asset compute應用程式單元測試架構可讓您測試應用程式，而不需編寫任何程式碼。 它仰賴應用程式轉譯檔案原則的來源。 必須設定特定檔案和資料夾結構，以使用測試來源檔案、選用引數、預期的轉譯和自訂驗證指令碼來定義測試案例。 依預設，會比較轉譯的位元組相等。 此外，您可使用簡單的JSON檔案輕鬆模擬外部HTTP服務。
+Asset Compute應用程式單元測試架構可讓您測試應用程式，而不需撰寫任何程式碼。 它仰賴應用程式轉譯檔案原則的來源。 必須設定特定檔案和資料夾結構，以使用測試來源檔案、選用引數、預期的轉譯和自訂驗證指令碼來定義測試案例。 依預設，會比較轉譯的位元組相等。 此外，您可使用簡單的JSON檔案輕鬆模擬外部HTTP服務。
 
 ### 新增測試 {#add-tests}
 
@@ -84,7 +84,7 @@ test/
         mock-<HOST_NAME2>.json
 ```
 
-模擬檔案是JSON格式的http回應。 如需詳細資訊，請參閱[此檔案](https://www.mock-server.com/mock_server/creating_expectations.html)。 如果要模擬多個主機名稱，請定義多個`mock-<mocked-host>.json`檔案。 以下是名為`mock-google.com.json`的`google.com`的範例模型檔案：
+模擬檔案是JSON格式的http回應。 如需詳細資訊，請參閱[此檔案](https://www.mock-server.com/mock_server/creating_expectations.html)。 如果要模擬多個主機名稱，請定義多個`mock-<mocked-host>.json`檔案。 以下是名為`google.com`的`mock-google.com.json`的範例模型檔案：
 
 ```json
 [{
@@ -135,11 +135,11 @@ tests/
 
 ### 測試預期的錯誤 {#test-unexpected-errors}
 
-錯誤測試案例不應包含預期的`rendition.*`檔案，且應在`params.json`檔案中定義預期的`errorReason`。
+錯誤測試案例不應包含預期的`rendition.*`檔案，且應在`errorReason`檔案中定義預期的`params.json`。
 
 >[!NOTE]
 >
->如果測試案例未包含預期的`rendition.*`檔案，且未在`params.json`檔案內定義預期的`errorReason`，則會假設為包含任何`errorReason`的錯誤案例。
+>如果測試案例未包含預期的`rendition.*`檔案，且未在`errorReason`檔案內定義預期的`params.json`，則會假設為包含任何`errorReason`的錯誤案例。
 
 錯誤測試案例結構：
 
@@ -158,15 +158,15 @@ tests/
 }
 ```
 
-檢視[Asset compute錯誤原因](https://github.com/adobe/asset-compute-commons#error-reasons)的完整清單和說明。
+檢視[Asset Compute錯誤原因](https://github.com/adobe/asset-compute-commons#error-reasons)的完整清單和說明。
 
 ## 對自訂應用程式進行偵錯 {#debug-custom-worker}
 
 下列步驟顯示如何使用Visual Studio Code偵錯自訂應用程式。 它允許檢視即時記錄、點選中斷點和逐步執行程式碼，以及在每次啟用時即時重新載入本機程式碼變更。
 
-`aio`現成可用的自動化了其中的許多步驟。 移至[Adobe Developer App Builder檔案](https://developer.adobe.com/app-builder/docs/getting_started/first_app)中的「偵錯應用程式」一節。 目前，以下步驟包含因應措施。
+`aio`現成可用的自動化了其中的許多步驟。 移至[Adobe Developer App Builder檔案](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#)中的「偵錯應用程式」一節。 目前，以下步驟包含因應措施。
 
-1. 從GitHub和選用的[ngrok](https://www.npmjs.com/package/ngrok)安裝最新的[wskdebug](https://github.com/apache/openwhisk-wskdebug)。
+1. 從GitHub和選用的[ngrok](https://github.com/apache/openwhisk-wskdebug)安裝最新的[wskdebug](https://www.npmjs.com/package/ngrok)。
 
    ```shell
    npm install -g @openwhisk/wskdebug
@@ -176,7 +176,7 @@ tests/
 1. 在JSON檔案中新增使用者設定。 它持續使用舊的Visual Studio程式碼偵錯工具。 新的有[個問題](https://github.com/apache/openwhisk-wskdebug/issues/74)，與wskdebug： `"debug.javascript.usePreview": false`。
 1. 關閉任何透過`aio app run`開啟的應用程式例項。
 1. 使用`aio app deploy`部署最新的程式碼。
-1. 僅使用`aio asset-compute devtool`執行Asset computeDevtool。 保持開啟。
+1. 僅使用`aio asset-compute devtool`執行Asset Compute Devtool。 保持開啟。
 1. 在Visual Studio程式碼編輯器中，將下列偵錯組態新增至`launch.json`：
 
    ```json
@@ -198,9 +198,9 @@ tests/
    }
    ```
 
-   從`aio app deploy`的輸出擷取`ACTION NAME`。
+   從`ACTION NAME`的輸出擷取`aio app deploy`。
 
-1. 從執行/偵錯設定中選取`wskdebug worker`並按播放圖示。 請等候它啟動，直到它在&#x200B;**[!UICONTROL 偵錯主控台]**&#x200B;視窗中顯示&#x200B;**[!UICONTROL 準備啟動]**。
+1. 從執行/偵錯組態中選取`wskdebug worker`並按播放圖示。 請等候它啟動，直到它在&#x200B;**[!UICONTROL 偵錯主控台]**&#x200B;視窗中顯示&#x200B;**[!UICONTROL 準備啟動]**。
 
 1. 在Devtool中按一下&#x200B;**[!UICONTROL 執行]**。 您可以看到在Visual Studio程式碼編輯器中執行的動作，而且記錄會開始顯示。
 
@@ -210,4 +210,4 @@ tests/
 
 >[!NOTE]
 >
->自訂應用程式中的每個請求都有兩個啟用專案。 第一個要求是Web動作，會在SDK程式碼中非同步呼叫自身。 第二個啟用是點選程式碼的啟用。
+>自訂應用程式中的每個請求都有兩個啟用專案。 第一個要求是網頁動作，在SDK程式碼中以非同步方式呼叫自身。 第二個啟用是點選程式碼的啟用。
