@@ -374,7 +374,7 @@ HTTP狀態碼為：
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | 格式副本目標格式也可以是文本提取的`text`格式副本，也可以是將元資料提取為xmlXMP格式副本的`xmp`格式副本。 請參閱[支援的格式](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
+| `fmt` | `string` | 格式副本目標格式也可以是文本提取的`text`格式副本，也可以是將元資料提取為xmlXMP格式副本的`xmp`格式副本。 請參閱[支援的格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
 | `worker` | `string` | [自定義應用程式](develop-custom-application.md)的URL。 必須是`https://` URL。 如果存在此欄位，則自定義應用程式將建立格式副本。 然後，在自定義應用程式中使用任何其他集格式副本欄位。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | 應使用HTTPPUT將生成的格式副本上載到的URL。 | `http://w.com/img.jpg` |
 | `target` | `object` | 生成的格式副本的多部分預簽名URL上載資訊。 此資訊用於[AEM / Oak Direct Binary Upload](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)，具有此[多部分上載行為](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)。<br>欄位：<ul><li>`urls`：字串陣列，每個預簽名的部件URL為一個</li><li>`minPartSize`：用於一個部件的最小大小= url</li><li>`maxPartSize`：單一部分使用的大小上限= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
@@ -382,7 +382,7 @@ HTTP狀態碼為：
 
 ### 轉譯特定欄位 {#rendition-specific-fields}
 
-如需目前支援的檔案格式清單，請參閱[支援的檔案格式](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)。
+如需目前支援的檔案格式清單，請參閱[支援的檔案格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)。
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
