@@ -2,9 +2,9 @@
 title: 針對 [!DNL Asset Compute Service]開發
 description: 使用 [!DNL Asset Compute Service]建立自訂應用程式。
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '1489'
+source-wordcount: '1722'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 1. 依照其餘的提示進行，並在Visual Studio Code （或您喜愛的程式碼編輯器）中開啟新的應用程式。 它包含自訂應用程式的支架和範常式式碼。
 
-   在此處閱讀有關App Builder應用程式[的](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#5-anatomy-of-an-app-builder-application)主要元件。
+   在此處閱讀有關App Builder應用程式](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#5-anatomy-of-an-app-builder-application)的[主要元件。
 
    範本應用程式會利用Adobe的[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)來上傳、下載及協調應用程式轉譯，因此開發人員只需要實作自訂應用程式邏輯。 在`actions/<worker-name>`資料夾中，`index.js`檔案是新增自訂應用程式程式碼的位置。
 
@@ -72,7 +72,8 @@ ht-degree: 0%
 
 當您在建立應用程式時登入時，系統會在ENV檔案中收集大部份App Builder認證。 不過，使用開發人員工具需要其他認證。
 
-<!-- TBD: Check if manual setup of credentials is required.
+<!-- 
+TBD: Check if manual setup of credentials is required.
 Manual set up of credentials is removed from troubleshooting and best practices page. Link was broken.
 If you did not log in, refer to our troubleshooting guide to [set up credentials manually](troubleshooting.md).
 -->
@@ -110,7 +111,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
      ASSET_COMPUTE_INTEGRATION_FILE_PATH=
      ```
 
-1. 新增S3或Azure儲存體認證。 您只需要存取一個雲端儲存解決方案。
+1. 新增S3或Azure儲存空間認證。 您只需要存取一個雲端儲存解決方案。
 
    ```conf
    # S3 credentials
@@ -146,7 +147,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->請勿在`--local`命令中使用`run`旗標。 無法搭配[!DNL Asset Compute]自訂應用程式和Asset Compute開發人員工具使用。 自訂應用程式是由[!DNL Asset Compute]服務呼叫，無法存取在開發人員本機電腦上執行的動作。
+>請勿在`run`命令中使用`--local`旗標。 無法搭配[!DNL Asset Compute]自訂應用程式和Asset Compute開發人員工具使用。 自訂應用程式是由[!DNL Asset Compute]服務呼叫，無法存取在開發人員本機電腦上執行的動作。
 
 請參閱[這裡](test-custom-application.md)如何測試和偵錯您的應用程式。 當您完成自訂應用程式的開發時，[部署您的自訂應用程式](deploy-custom-application.md)。
 
@@ -191,7 +192,8 @@ exports.main = worker(async function (source, rendition) {
 
 例如，[`worker-animal-pictures`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L46)使用[`node-httptransfer`](https://github.com/adobe/node-httptransfer#node-httptransfer)資料庫從Wikimedia對靜態URL發出擷取要求。
 
-<!-- TBD: Revisit later to see if this note is required.
+<!-- 
+TBD: Revisit later to see if this note is required.
 >[!NOTE]
 >
 >For extra authorization for these API calls, see [custom authorization checks](#custom-authorization-checks).
@@ -226,11 +228,12 @@ exports.main = worker(async function (source, rendition) {
 
 ## 驗證和授權支援 {#authentication-authorization-support}
 
-依預設，Asset Compute自訂應用程式會隨App Builder專案的授權和驗證檢查提供。 在`require-adobe-auth`中將`true`註解設定為`manifest.yml`來啟用。
+依預設，Asset Compute自訂應用程式會隨App Builder專案的授權和驗證檢查提供。 在`manifest.yml`中將`require-adobe-auth`註解設定為`true`來啟用。
 
 ### 存取其他Adobe API {#access-adobe-apis}
 
-<!-- TBD: Revisit this section. Where do we document console workspace creation?
+<!-- 
+TBD: Revisit this section. Where do we document console workspace creation?
 -->
 
 將API服務新增至安裝程式中建立的[!DNL Asset Compute]主控台工作區。 這些服務是[!DNL Asset Compute Service]產生的JWT存取權杖的一部分。 可在應用程式動作`params`物件中存取權杖和其他認證。
@@ -245,7 +248,7 @@ const orgId = params.auth.orgId; // Experience Cloud Organization
 
 若要處理其他外部服務的認證，請將其傳遞為動作上的預設引數。 傳輸中會自動將資料加密。 如需詳細資訊，請參閱Adobe I/O Runtime開發人員指南中的[建立動作](https://developer.adobe.com/app-builder/docs/guides/runtime_guides/creating-actions#)。 然後在部署期間使用環境變數設定它們。 這些引數可以在動作內的`params`物件中存取。
 
-在`inputs`的`manifest.yml`內設定預設引數：
+在`manifest.yml`的`inputs`內設定預設引數：
 
 ```yaml
 packages:

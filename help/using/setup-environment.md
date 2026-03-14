@@ -2,10 +2,10 @@
 title: 設定 [!DNL Asset Compute Service]所需的開發環境
 description: 供 [!DNL Asset Compute Service] 開始建立和測試自訂程式碼的開發人員環境設定。
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '360'
-ht-degree: 1%
+source-wordcount: '416'
+ht-degree: 3%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 若要建立可讓您為[!DNL Asset Compute Service]開發的設定，請遵循這些需求和指示。
 
-1. [取得](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#acquire-access-and-credentials)的存取權和認證[!DNL Adobe Developer App Builder]。
+1. [取得[!DNL Adobe Developer App Builder]的存取權和認證](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#acquire-access-and-credentials)。
 
 1. [設定本機環境](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#local-environment-set-up)和必要的工具。
 
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 1. 確定[!DNL Experience Cloud]組織中有系統管理員或開發人員角色。 系統管理員在[Admin Console](https://adminconsole.adobe.com/overview)中設定此角色。
 
-1. 登入[Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)。 確認您與[!DNL Experience Cloud]屬於相同的[!DNL Experience Manager]組織且為[!DNL Cloud Service]整合。 如需Adobe Developer Console的詳細資訊，請前往[主控台檔案](https://developer.adobe.com/developer-console/docs/guides/)。
+1. 登入[Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)。 確認您與[!DNL Experience Manager]屬於相同的[!DNL Experience Cloud]組織且為[!DNL Cloud Service]整合。 如需Adobe Developer Console的詳細資訊，請前往[主控台檔案](https://developer.adobe.com/developer-console/docs/guides/)。
 
 1. [建立App Builder專案](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#)。 按一下&#x200B;**[!UICONTROL 從範本建立新專案]** > **[!UICONTROL 專案]**。 選取「App Builder」。 它會建立具有兩個工作區的新App Builder專案： `Production`和`Stage`。 視需要新增其他工作區，例如`Development`。
 
@@ -52,7 +52,8 @@ ht-degree: 1%
 
 設定好您的環境後，您就可以[建立自訂應用程式](develop-custom-application.md)。
 
-<!-- More ideas:
+<!-- 
+More ideas:
  
 * Any steps in the beginning that lead to gotchas later should be called out for caution? For example,
   * don't change some defaults initially

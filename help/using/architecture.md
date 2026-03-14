@@ -2,10 +2,10 @@
 title: ' [!DNL Asset Compute Service]的架構'
 description: ' [!DNL Asset Compute Service] API、應用程式和SDK如何共同運作以提供雲端原生資產處理服務。'
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 0%
+source-wordcount: '494'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Asset Compute Service]可透過根據[!DNL Adobe Developer App Builder]建立自訂應用程式來擴充。 這些自訂應用程式是[!DNL Project Adobe Developer App Builder]個Headless應用程式，可執行新增自訂轉換工具或呼叫外部API以執行影像作業等工作。
 
-[!DNL Project Adobe Developer App Builder]是在Adobe [!DNL `I/O Runtime`]上建置和部署自訂Web應用程式的架構。 若要建立自訂應用程式，開發人員可以利用[!DNL React Spectrum] (Adobe的UI工具組)、建立微服務、建立自訂事件以及協調API。 請參閱Adobe Developer App Builder[的](https://developer.adobe.com/app-builder/docs/intro_and_overview/#)檔案。
+[!DNL Project Adobe Developer App Builder]是在Adobe [!DNL `I/O Runtime`]上建置和部署自訂Web應用程式的架構。 若要建立自訂應用程式，開發人員可以利用[!DNL React Spectrum] （Adobe的UI工具組）、建立微服務、建立自訂事件以及協調API。 請參閱Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/intro_and_overview/#)的[檔案。
 
 此架構所根據的基礎包括：
 
@@ -37,7 +37,8 @@ ht-degree: 0%
 
 * **一個[通用應用程式庫](https://github.com/adobe/asset-compute-sdk)**&#x200B;處理通用工作。 例如，下載來源檔案、上傳轉譯、錯誤報告、事件傳送和監視。 此設計可確保應用程式開發保持簡單明瞭，遵循無伺服器概念，互動僅限於本機檔案系統。
 
-<!-- TBD:
+<!-- 
+TBD:
 
 * About the YAML file?
 * minimize description to custom applications

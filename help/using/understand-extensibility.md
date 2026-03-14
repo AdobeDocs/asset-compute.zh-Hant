@@ -2,22 +2,22 @@
 title: 瞭解如何延伸 [!DNL Asset Compute Service]
 description: 何時及如何擴充 [!DNL Asset Compute Service] 功能以進行自訂資產處理。
 exl-id: 3b903364-34cc-44d5-9a03-24a0102cf85d
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '229'
-ht-degree: 1%
+source-wordcount: '304'
+ht-degree: 11%
 
 ---
 
 # 擴充性簡介 {#introduction-to-extensibilty}
 
-[在 [!DNL Experience Manager] 中處理設定檔為 [!DNL Cloud Service]](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)，可解決許多轉譯需求，例如轉換為格式以及調整影像大小。 更複雜的業務需求可能需要符合組織需求的自訂解決方案。 可透過建立從[!DNL Asset Compute Service]中的處理設定檔呼叫的自訂應用程式來擴充[!DNL Experience Manager]。 這些自訂應用程式符合[支援的使用案例](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)。
+許多轉譯需求（例如轉換為格式及調整影像大小）是由[在 [!DNL Experience Manager] 中處理設定檔as a [!DNL Cloud Service]](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)所解決。 更複雜的業務需求可能需要符合組織需求的自訂解決方案。[!DNL Asset Compute Service] 可藉由建立從[!DNL Experience Manager]中的處理設定檔呼叫的自訂應用程式來擴充。 這些自訂應用程式符合[支援的使用案例](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)。
 
 >[!NOTE]
 >
->[!DNL Asset Compute Service]僅可與[!DNL Experience Manager]搭配[!DNL Cloud Service]使用。
+>[!DNL Asset Compute Service]僅可與[!DNL Experience Manager]搭配使用作為[!DNL Cloud Service]。
 
-自訂應用程式是Headless [Adobe Developer App Builder](https://github.com/AdobeDocs/app-builder)應用程式。 透過[!DNL Asset Compute Service]Asset Compute SDK[和Adobe Developer App Builder開發人員工具，可輕鬆使用自訂應用程式延伸](https://github.com/adobe/asset-compute-sdk)。 這些工具可讓開發人員專注於商業邏輯。 建立自訂應用程式就像建立無伺服器的Adobe [!DNL I/O Runtime]動作一樣簡單。 這是單一Node.js JavaScript函式。 [基本自訂應用程式範例](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js)可加以說明。
+自訂應用程式是Headless [Adobe Developer App Builder](https://github.com/AdobeDocs/app-builder)應用程式。 Extending [!DNL Asset Compute Service] with custom applications is made simple through the [Asset Compute SDK](https://github.com/adobe/asset-compute-sdk) and Adobe Developer App Builder developer tooling. 這些工具可讓開發人員專注於商業邏輯。 建立自訂應用程式就像建立無伺服器的Adobe [!DNL I/O Runtime]動作一樣簡單。 這是單一Node.js JavaScript函式。 [基本自訂應用程式範例](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js)可加以說明。
 
 ## 先決條件和布建需求 {#prerequisites-and-provisioning}
 
@@ -30,7 +30,8 @@ ht-degree: 1%
 * 確保開發人員的組織中開發人員角色或管理員許可權。
 * 請確定本機已安裝Adobe [[!DNL aio-cli]](https://github.com/adobe/aio-cli)。
 
-<!-- TBD for later:
+<!-- 
+TBD for later:
 
 * What all accesses and licenses are required?
 * What all permissions are required to create, debug, and deploy custom applications?

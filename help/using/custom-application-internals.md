@@ -2,9 +2,9 @@
 title: 瞭解自訂應用程式的運作方式
 description: ' [!DNL Asset Compute Service] 自訂應用程式的內部運作，以協助瞭解其運作方式。'
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ curl -X POST \
 
 使用者端負責使用預先簽署的URL正確格式化轉譯。 [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript程式庫可用於NodeJS應用程式，以預先簽署URL。 目前資料庫僅支援Azure Blob儲存和AWS S3容器。
 
-處理要求傳回可用於輪詢`requestId`事件的[!DNL Adobe I/O]。
+處理要求傳回可用於輪詢[!DNL Adobe I/O]事件的`requestId`。
 
 以下為範例自訂應用程式處理請求。
 
@@ -72,7 +72,9 @@ curl -X POST \
 
 自訂應用程式使用的[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會處理HTTP POST要求。 它也會處理來源下載、上傳轉譯、傳送Adobe [!DNL I/O Events]以及錯誤處理。
 
-<!-- TBD: Add the application diagram. -->
+<!-- 
+TBD: Add the application diagram. 
+-->
 
 ### 應用程式程式碼 {#application-code}
 
@@ -110,7 +112,7 @@ SDK會呼叫每個轉譯的非同步[轉譯回呼函式](https://github.com/adob
 
 ### 上傳轉譯 {#upload-rendition}
 
-在建立每個轉譯並儲存在`rendition.path`提供路徑的檔案中後，[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會將每個轉譯上傳至雲端儲存空間(AWS或Azure)。 若且唯若傳入請求具有多個指向相同應用程式URL的轉譯時，自訂應用程式才會同時取得多個轉譯。 上傳至雲端儲存空間會在每個轉譯之後以及下一個轉譯的執行回呼之前完成。
+在建立每個轉譯並儲存在`rendition.path`提供路徑的檔案中後，[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)會將每個轉譯上傳至雲端儲存空間（AWS或Azure）。 若且唯若傳入請求具有多個指向相同應用程式URL的轉譯時，自訂應用程式才會同時取得多個轉譯。 上傳至雲端儲存空間會在每個轉譯之後以及下一個轉譯的執行回呼之前完成。
 
 `batchWorker()`有不同的行為。 它會處理所有轉譯，並在所有轉譯均已處理完畢後上傳它們。
 
@@ -142,7 +144,8 @@ await Promise.all(events.map(event => {
 
 如需有關如何取得日誌事件的詳細資訊，請參閱Adobe [[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling-api#)。
 
-<!-- TBD:
+<!-- 
+TBD:
 * Illustration of the controls/data flow.
 * Basic overview, in text and not code, of how an application works.
 -->
