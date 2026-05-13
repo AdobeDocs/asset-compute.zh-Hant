@@ -2,10 +2,18 @@
 title: '[!DNL Adobe Asset Compute Service]使用手冊'
 description: 本檔案涵蓋 [!DNL Asset Compute Service] 工作，例如簡介、如何開發、管理、部署和疑難排解您的自訂程式碼。
 exl-id: 5acf87d1-a391-4802-bfce-e367fc8564df
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+TQID: https://experienceleague.adobe.com/pLoude239KQnS4no1oSFaNzfzlHFdXvprrBg-NMUI0g
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '206'
-ht-degree: 0%
+source-wordcount: 237
+ht-degree: 5%
 
 ---
 
@@ -17,7 +25,7 @@ ht-degree: 0%
 
 [!DNL Asset Compute Service]支援許多檔案格式的轉換，並與許多Adobe服務整合。 檢視[支援的檔案格式和整合服務](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)清單。
 
-檢視[as a [!DNL Adobe Experience Manager]  [!DNL Cloud Service]中可用的](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)資產微服務功能的概觀，以及如何在[!DNL Experience Manager]中使用微服務。
+檢視 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service][&#128279;](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)中可用的資產微服務功能的概觀，以及如何在[!DNL Experience Manager]中使用微服務。
 
 [!DNL Asset Compute Service]擴充功能是在[github.com/adobe](https://github.com/adobe)上的開放開發模型下開發，歡迎擴充功能開發人員協助撰寫。 所有與開發、建立、測試和部署自訂應用程式相關的元件都是開放原始碼。 檢視[計算服務](contribute-to-compute-service.md)的貢獻方式與位置。
 

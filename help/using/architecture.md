@@ -2,9 +2,19 @@
 title: ' [!DNL Asset Compute Service]的架構'
 description: ' [!DNL Asset Compute Service] API、應用程式和SDK如何共同運作以提供雲端原生資產處理服務。'
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/HM9aYFHI98DFs4rfcStr-mpAfYVrjvMtlO6N7azO-20
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2:
+  - id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: 494
 ht-degree: 1%
 
 ---

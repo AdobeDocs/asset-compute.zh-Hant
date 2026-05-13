@@ -2,16 +2,29 @@
 title: '[!DNL Asset Compute Service] HTTP API'
 description: '[!DNL Asset Compute Service] HTTP API可建立自訂應用程式。'
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/fewAzOtKA-XTmpv-6Q0mlqXpalMWva6GpHlJSW6wPog
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2:
+  - id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
+  - id: ae478996-b206-4712-9b0c-dc78a2644453
+  - id: da0dfbce-df02-4f8b-b32d-a4e3b1d05085
+  - id: e17747bc-9b7b-44e6-a443-f54229a02620
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '2995'
+source-wordcount: 2995
 ht-degree: 3%
 
 ---
 
 # [!DNL Asset Compute Service] HTTP API {#asset-compute-http-api}
 
-API的使用僅限於開發目的。 API在開發自訂應用程式時作為內容提供。[!DNL Adobe Experience Manager] as a [!DNL Cloud Service]使用此API將處理資訊傳遞至自訂應用程式。 如需詳細資訊，請參閱[使用資產微服務和處理設定檔](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)。
+API的使用僅限於開發目的。 API在開發自訂應用程式時作為內容提供。 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]使用此API將處理資訊傳遞至自訂應用程式。 如需詳細資訊，請參閱[使用資產微服務和處理設定檔](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use)。
 
 >[!NOTE]
 >
@@ -353,31 +366,31 @@ HTTP狀態碼為：
 
 支援的使用案例包括：
 
-* 裁切是矩形的轉譯，其限制由crop.w、crop.h、crop.x和crop.y定義。 裁切詳細資料是在轉譯物件的`instructions.crop`欄位中指定的。
+* 裁切是矩形的轉譯，其限制由crop.w、crop.h、crop.x和crop.y定義。 在轉譯物件的`instructions.crop`欄位中指定裁切詳細資料。
 * 使用寬度、高度或兩者來調整影像大小。 `instructions.width`和`instructions.height`在轉譯物件中定義它。 若要僅使用寬度或高度來調整大小，請僅設定一個值。 運算服務可節省外觀比例。
 * 設定JPEG影像的品質。 `instructions.quality`在轉譯物件中定義它。 品質等級為100代表最高品質，而數字較低則表示品質降低。
-* 建立交錯影像。 `instructions.interlace`在格式副本對象中定義它。
-* 設定DPI以通過調整應用於像素的比例來調整呈現大小以用於案頭發佈。 `instructions.dpi`在格式副本對象中定義它以更改dpi解析度。 但是，要調整影像大小，使其在不同的解析度下大小相同，請使用`convertToDpi`說明。
-* 調整影像的大小，使其渲染的寬度或高度在指定目標解析度(DPI)下保持與原始影像相同。 `instructions.convertToDpi`在格式副本對象中定義它。
+* 建立交錯影像。 `instructions.interlace`在轉譯物件中定義它。
+* 設定DPI可調整套用至畫素的比例，以調整案頭出版的演算大小。 `instructions.dpi`在轉譯物件中定義它以變更DPI解析度。 但是，若要調整影像大小，使其以不同的解析度大小相同，請使用`convertToDpi`指示。
+* 調整影像大小，使其演算後的寬度或高度與指定目標解析度(DPI)的原始影像保持相同。 `instructions.convertToDpi`在轉譯物件中定義它。
 
 ## 浮水印資產 {#add-watermark}
 
-[Asset computeSDK](https://github.com/adobe/asset-compute-sdk)支援向PNG、JPEG、TIFF和GIF影像檔案添加水印。 將按照格式副本上的`watermark`對象中的格式副本說明添加水印。
+[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk)支援在PNG、JPEG、TIFF和GIF影像檔案中新增浮水印。 依照轉譯上`watermark`物件中的轉譯指示新增浮水印。
 
-在格式副本後處理期間進行水印處理。 要對資產進行水印，自定義工作程式[通過將格式副本對象上的欄位`postProcess`設定為`true`，選擇後處理](#opt-in-to-post-processing)。 如果工作程式不選擇加入，則不應用水印，即使在請求中的格式副本對象上設定了水印對象。
+浮水印會在轉譯後期處理期間完成。 若要為資產加上浮水印，自訂背景工作[將轉譯物件上的欄位`postProcess`設定為`true`，選擇進行後處理](#opt-in-to-post-processing)。 如果背景工作未選擇加入，則不會套用浮水印，即使浮水印物件已設定在請求中的轉譯物件上。
 
-## 格式副本說明 {#rendition-instructions}
+## 轉譯指示 {#rendition-instructions}
 
-以下是[`/process`](#process-request)中`renditions`陣列的可用選項。
+下列是[`/process`](#process-request)中`renditions`陣列的可用選項。
 
 ### 常用欄位 {#common-fields}
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | 格式副本目標格式也可以是文本提取的`text`格式副本，也可以是將元資料提取為xmlXMP格式副本的`xmp`格式副本。 請參閱[支援的格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
-| `worker` | `string` | [自定義應用程式](develop-custom-application.md)的URL。 必須是`https://` URL。 如果存在此欄位，則自定義應用程式將建立格式副本。 然後，在自定義應用程式中使用任何其他集格式副本欄位。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
-| `target` | `string` | 應使用HTTPPUT將生成的格式副本上載到的URL。 | `http://w.com/img.jpg` |
-| `target` | `object` | 生成的格式副本的多部分預簽名URL上載資訊。 此資訊用於[AEM / Oak Direct Binary Upload](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)，具有此[多部分上載行為](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)。<br>欄位：<ul><li>`urls`：字串陣列，每個預簽名的部件URL為一個</li><li>`minPartSize`：用於一個部件的最小大小= url</li><li>`maxPartSize`：單一部分使用的大小上限= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
+| `fmt` | `string` | 轉譯目標格式也可以是`text` （文字擷取）和`xmp` （擷取XMP中繼資料為xml）。 請參閱[支援的格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
+| `worker` | `string` | [自訂應用程式](develop-custom-application.md)的網址。 必須是`https://` URL。 如果此欄位存在，自訂應用程式會建立轉譯。 然後，任何其他集合轉譯欄位都會用於自訂應用程式中。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
+| `target` | `string` | 所產生轉譯應使用HTTP PUT上傳至的URL。 | `http://w.com/img.jpg` |
+| `target` | `object` | 所產生轉譯的多部分預先簽署URL上傳資訊。 此資訊適用於[AEM / Oak直接二進位上傳](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)，具有此[多部分上傳行為](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)。<br>欄位：<ul><li>`urls`：字串陣列，每個預先簽署部分URL各一個</li><li>`minPartSize`：用於一個部分的大小下限= url</li><li>`maxPartSize`：單一部分使用的大小上限= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
 | `userData` | `object` | 選擇性。 使用者端會控制保留空間，並依原樣傳遞至轉譯事件。 可讓使用者端新增自訂資訊以識別轉譯事件。 自訂應用程式不可修改或依賴它，因為使用者端隨時可以自由變更。 | `{ ... }` |
 
 ### 轉譯特定欄位 {#rendition-specific-fields}
@@ -407,45 +420,45 @@ PNG格式會作為浮水印使用。
 
 | 名稱 | 類型 | 說明 | 範例 |
 |-------------------|----------|-------------|---------|
-| `scale` | `number` | 浮水印的比例，介於`0.0`到`1.0`之間。`1.0` 表示浮水印具有其原始比例(1:1)，而較低的值會縮小浮水印大小。 | 值`0.5`表示原始大小的一半。 |
+| `scale` | `number` | 浮水印的比例，介於`0.0`到`1.0`之間。 `1.0`表示浮水印具有原始比例(1:1)，較低的值會減少浮水印大小。 | 值`0.5`表示原始大小的一半。 |
 | `image` | `url` | 要用於浮水印的PNG檔案的URL。 | |
 
 ## 非同步事件 {#asynchronous-events}
 
-處理完格式副本或發生錯誤時，事件將發送到Adobe[!DNL `I/O Events Journal`]。 客戶端必須偵聽通過[`/register`](#register)提供的日誌URL。 日誌響應包括`event`陣列，該陣列由每個事件的一個對象組成，其中`event`欄位包含實際事件負載。
+處理轉譯完成或發生錯誤時，事件會傳送至Adobe [!DNL `I/O Events Journal`]。 使用者端必須接聽透過[`/register`](#register)提供的日誌URL。 日誌回應包含`event`陣列，每個事件包含一個物件，其中`event`欄位包含實際事件裝載。
 
-[!DNL Asset Compute Service]的所有事件的Adobe[!DNL `I/O Events`]類型為`asset_compute`。 日記帳僅自動訂閱此事件類型，並且不再需要基於[!DNL Adobe Developer]事件類型進行篩選。 特定於服務的事件類型在事件的`type`屬性中可用。
+[!DNL Asset Compute Service]之所有事件的Adobe [!DNL `I/O Events`]型別是`asset_compute`。 分錄僅自動訂閱此事件型別，不需要根據[!DNL Adobe Developer]事件型別進一步篩選。 服務特定事件型別可在事件的`type`屬性中使用。
 
-### 事件類型 {#event-types}
+### 事件型別 {#event-types}
 
 | 事件 | 說明 |
 |---------------------|-------------|
-| `rendition_created` | 為每個成功處理和上載的格式副本發送。 |
-| `rendition_failed` | 為無法處理或上載的每個格式副本發送。 |
+| `rendition_created` | 已針對每個成功處理和上傳的轉譯傳送。 |
+| `rendition_failed` | 針對無法處理或上傳的每個轉譯傳送。 |
 
 ### 事件屬性 {#event-attributes}
 
 | 屬性 | 類型 | 事件 | 說明 |
 |-------------|----------|---------------|-------------|
-| `date` | `string` | `*` | 按照JavaScript [Date.toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)的定義，以簡化的擴展[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)格式發送事件的時間戳。 |
-| `requestId` | `string` | `*` | 原始請求到`/process`的請求ID，與`X-Request-Id`標頭相同。 |
+| `date` | `string` | `*` | 以JavaScript [Date.toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)定義的簡化延伸[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)格式傳送事件時的時間戳記。 |
+| `requestId` | `string` | `*` | 傳送給`/process`的原始要求的要求識別碼，與`X-Request-Id`標頭相同。 |
 | `source` | `object` | `*` | `/process`請求的`source`。 |
-| `userData` | `object` | `*` | 如果已設定，則`/process`請求中的格式副本的`userData`。 |
-| `rendition` | `object` | `rendition_*` | 在`/process`中傳遞的相應格式副本對象。 |
-| `metadata` | `object` | `rendition_created` | 格式副本的[元資料](#metadata)屬性。 |
-| `errorReason` | `string` | `rendition_failed` | 格式副本失敗[原因](#error-reasons)（如果有）。 |
-| `errorMessage` | `string` | `rendition_failed` | 提供有關格式副本失敗（如果有）的更詳細資訊的文本。 |
+| `userData` | `object` | `*` | 來自`/process`請求的`userData`轉譯（如果已設定）。 |
+| `rendition` | `object` | `rendition_*` | 在`/process`中傳遞的對應轉譯物件。 |
+| `metadata` | `object` | `rendition_created` | 轉譯的[中繼資料](#metadata)屬性。 |
+| `errorReason` | `string` | `rendition_failed` | 轉譯失敗[原因](#error-reasons) （如果有）。 |
+| `errorMessage` | `string` | `rendition_failed` | 此文字會提供更多有關轉譯失敗的詳細資料（如果有的話）。 |
 
 ### 後設資料 {#metadata}
 
 | 屬性 | 說明 |
 |--------|-------------|
 | `repo:size` | 轉譯的大小，以位元組計。 |
-| `repo:sha1` | 格式副本的sha1摘要。 |
+| `repo:sha1` | 轉譯的sha1摘要。 |
 | `dc:format` | 轉譯的 MIME 類型。 |
-| `repo:encoding` | 格式副本的字元集編碼（如果它是基於文本的格式）。 |
-| `tiff:ImageWidth` | 格式副本的寬度（以像素為單位）。 僅用於影像格式副本。 |
-| `tiff:ImageLength` | 格式副本的長度（以像素為單位）。 僅用於影像格式副本。 |
+| `repo:encoding` | 轉譯的字元集編碼（若為文字型格式）。 |
+| `tiff:ImageWidth` | 轉譯的寬度（畫素）。 僅供影像轉譯使用。 |
+| `tiff:ImageLength` | 轉譯的長度（畫素）。 僅供影像轉譯使用。 |
 
 ### 錯誤原因 {#error-reasons}
 
