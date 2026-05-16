@@ -2,16 +2,14 @@
 cloud: Experience Cloud
 product: adobe experience manager
 solution: Experience Manager, Experience Manager Assets
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-  - id: d09181b5-a36a-43de-ba01-36641440bc43
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8id: d09181b5-a36a-43de-ba01-36641440bc43
 type: Documentation
 role: Developer
 feature: Asset Compute Microservices
 user-guide-title: Asset Compute Service指南
 user-guide-description: 本檔案涵蓋 [!DNL Asset Compute Service] 工作，例如如何開發、管理、部署和疑難排解您的自訂程式碼。
 breadcrumb-title: Asset Compute Service指南
-source-git-commit: 9d22220466d836df075748dd1dc0bf422c620c36
+source-git-commit: 7997d284c6051dd2b9f7635f955bdc49d52e843a
 workflow-type: tm+mt
 source-wordcount: 109
 ht-degree: 16%
@@ -23,7 +21,7 @@ ht-degree: 16%
 
 + [Asset Compute服務使用手冊](home.md)
 + [概觀](introduction.md)
-+ [支援的檔案格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support)
++ [支援的檔案格式](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [架構](architecture.md)
 + [API參考](api.md)
 + 擴充Asset Compute服務 {#extend}
