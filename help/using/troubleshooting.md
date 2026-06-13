@@ -3,15 +3,10 @@ title: 疑難排解 [!DNL Asset Compute Service]
 description: 使用 [!DNL Asset Compute Service]進行自訂應用程式的疑難排解和偵錯。
 exl-id: 017fff91-e5e9-4a30-babf-5faa1ebefc2f
 TQID: https://experienceleague.adobe.com/ccEul0gYUEBOlgZmDcpy99sP4AY6GMb108xJd2WjcNI
-product_v2:
-  - id: d09181b5-a36a-43de-ba01-36641440bc43
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-feature_v2:
-  - id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: c1579802-ddd4-4214-8a91-97b2066abe11
+product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2: id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: c1579802-ddd4-4214-8a91-97b2066abe11
 source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
 source-wordcount: 293
@@ -32,7 +27,7 @@ ht-degree: 0%
 
 ## 透過Adobe [!DNL aio-cli]登入問題 {#login-via-aio-cli}
 
-如果您透過Adobe [!DNL aio-cli][&#128279;](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#3-signing-in-from-cli)登入[!DNL Adobe Developer Console] 時發生問題，請手動新增開發、測試和部署自訂應用程式所需的認證：
+如果您透過Adobe [!DNL aio-cli]](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#3-signing-in-from-cli)登入[!DNL Adobe Developer Console] [時發生問題，請手動新增開發、測試和部署自訂應用程式所需的認證：
 
 1. 導覽至您在[Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis)上的Adobe Developer App Builder專案和工作區，然後從右上角按下&#x200B;**[!UICONTROL 下載]**。 開啟此檔案，並將此JSON儲存至您電腦上的安全位置。
 
