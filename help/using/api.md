@@ -389,7 +389,7 @@ HTTP狀態碼為：
 |-------------------|----------|-------------|---------|
 | `fmt` | `string` | 轉譯目標格式也可以是`text` （文字擷取）和`xmp` （擷取XMP中繼資料為xml）。 請參閱[支援的格式](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
 | `worker` | `string` | [自訂應用程式](develop-custom-application.md)的網址。 必須是`https://` URL。 如果此欄位存在，自訂應用程式會建立轉譯。 然後，任何其他集合轉譯欄位都會用於自訂應用程式中。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
-| `target` | `string` | 所產生轉譯應使用HTTP PUT上傳至的URL。 | `http://w.com/img.jpg` |
+| `target` | `string` | 所產生轉譯應使用HTTP PUT上傳到的URL。 | `http://w.com/img.jpg` |
 | `target` | `object` | 所產生轉譯的多部分預先簽署URL上傳資訊。 此資訊適用於[AEM / Oak直接二進位上傳](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html)，具有此[多部分上傳行為](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)。<br>欄位：<ul><li>`urls`：字串陣列，每個預先簽署部分URL各一個</li><li>`minPartSize`：用於一個部分的大小下限= url</li><li>`maxPartSize`：單一部分使用的大小上限= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
 | `userData` | `object` | 選擇性。 使用者端會控制保留空間，並依原樣傳遞至轉譯事件。 可讓使用者端新增自訂資訊以識別轉譯事件。 自訂應用程式不可修改或依賴它，因為使用者端隨時可以自由變更。 | `{ ... }` |
 
